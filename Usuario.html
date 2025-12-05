@@ -1,75 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Raiz Alerta — Painel do usuário</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Usuário - Raiz Alerta</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js para os gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<header class="site-header">
-<div class="brand">Raiz Alerta</div>
-<nav class="nav">
-<a href="index.html">Início</a>
-<a href="galeria.html">Galeria</a>
-<a href="usuario.html" class="active">Área do usuário</a>
-<a href="contato.html">Contato</a>
-</nav>
-</header>
 
+    <header>
+        <h1>Painel do Usuário</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="usuario.html" class="active">Painel</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="container user-panel">
-<section class="panel-top">
-<h1>Painel de Monitoramento (Demo)</h1>
-<div class="cards">
-<div class="card small" id="card-moisture">
-<h4>Umidade do solo</h4>
-<div class="large-value" id="moistureValue">-- %</div>
-</div>
-<div class="card small" id="card-ph">
-<h4>pH</h4>
-<div class="large-value" id="phValue">--</div>
-</div>
-<div class="card small" id="card-light">
-<h4>Luminosidade</h4>
-<div class="large-value" id="lightValue">-- lx</div>
-</div>
-<div class="card small" id="card-temp">
-<h4>Temperatura</h4>
-<div class="large-value" id="tempValue">-- °C</div>
-</div>
-</div>
-</section>
+    <main class="container user-panel">
 
+        <h2>Monitoramento da Planta</h2>
+        <p>Valores atualizados automaticamente a cada 3 segundos.</p>
 
-<section class="panel-charts">
-<div class="chart-card">
-<h3>Histórico: Umidade (%)</h3>
-<canvas id="chartMoisture" height="120"></canvas>
-</div>
+        <!-- Cards de valores -->
+        <div class="cards">
 
+            <div class="card">
+                <h3>Umidade</h3>
+                <p id="moistureValue">--</p>
+            </div>
 
-<div class="chart-card">
-<h3>Histórico: Temperatura (°C)</h3>
-<canvas id="chartTemp" height="120"></canvas>
-</div>
+            <div class="card">
+                <h3>Temperatura</h3>
+                <p id="tempValue">--</p>
+            </div>
 
+            <div class="card">
+                <h3>pH</h3>
+                <p id="phValue">--</p>
+            </div>
 
-<div class="chart-card fullwidth">
-<h3>Alertas recentes</h3>
-<ul id="alertsList" class="alerts-list">
-</ul>
-</div>
-</section>
-</main>
+            <div class="card">
+                <h3>Luz</h3>
+                <p id="lightValue">--</p>
+            </div>
 
+        </div>
 
-<footer class="site-footer">
-<div>&copy 2025 Raiz Alerta</div>
-</footer>
+        <!-- Gráficos -->
+        <section class="charts">
+            <h2>Histórico</h2>
 
+            <div class="chart-box">
+                <h3>Histórico de Umidade</h3>
+                <canvas id="chartMoisture"></canvas>
+            </div>
 
-<script src="js/script.js"></script>
+            <div class="chart-box">
+                <h3>Histórico de Temperatura</h3>
+                <canvas id="chartTemp"></canvas>
+            </div>
+        </section>
+
+        <!-- Alertas -->
+        <section class="alerts">
+            <h2>Alertas Recentes</h2>
+            <ul id="alertsList"></ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Raiz Alerta. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script geral -->
+    <script src="script.js"></script>
+
 </body>
 </html>
